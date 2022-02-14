@@ -7,7 +7,9 @@ public class StreetBall_Player {
 	private int twoPointers;
 	private int threePointers;
 	private int fouls;
-	private int attempts;
+	private int onePointerAttempt;
+	private int twoPointerAttempt;
+	private int threePointerAttempt;
 	private double shotPercentage;
 	
 	
@@ -18,23 +20,25 @@ public class StreetBall_Player {
 		this.twoPointers = 0;
 		this.threePointers = 0;
 		this.fouls = 0;
-		this.attempts = 0;
+		this.onePointerAttempt = 0;
+		this.twoPointerAttempt = 0;
+		this.threePointerAttempt = 0;
 		this.shotPercentage = 0;
 	}
 
-	public StreetBall_Player(String name) {
-		this.name = null;
+	public StreetBall_Player(String name, int number) {
+		this();
+		this.name = name;
+		this.number = number;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
 
 	public int getNumber() {
 		return number;
@@ -45,7 +49,23 @@ public class StreetBall_Player {
 	}
 	
 	public void shotAttempt(int shotType, boolean made) {
-		
+		switch (shotType) {
+		case 1:
+			onePointerAttempt += 1;
+			onePointers += made ? 1 : 0;
+			break;
+		case 2:
+			twoPointerAttempt += 1;
+			twoPointers += made ? 1 : 0;
+			break;
+		case 3:
+			threePointerAttempt += 1;
+			threePointers += made ? 1 : 0;
+			break;
+		default:
+			System.out.println("invalid shot type = " + shotType);
+			break;
+		}
 	}
 
 	public int getOnePointers() {
@@ -59,34 +79,32 @@ public class StreetBall_Player {
 	public int getThreePointers() {
 		return threePointers;
 	}
+	
+	public int getOnePointerAttempt() {
+		return onePointerAttempt;
+	}
+
+	public int getTwoPointerAttempt() {
+		return twoPointerAttempt;
+	}
+
+	public int getThreePointerAttempt() {
+		return threePointerAttempt;
+	}
 
 	public int getFouls() {
 		return fouls;
 	}
 
-
 	public void setFouls(int fouls) {
 		this.fouls = fouls;
 	}
-
-
-	public int getAttempts() {
-		return attempts;
-	}
-
-
-	public void setAttempts(int attempts) {
-		this.attempts = attempts;
-	}
-
 	
 	public double getShotPercentage() {
 		return shotPercentage;
 	}
 
-
 	public void setShotPercentage(double shotPercentage) {
 		this.shotPercentage = shotPercentage;
 	}
-	
 }
