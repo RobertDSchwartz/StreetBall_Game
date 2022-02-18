@@ -1,18 +1,54 @@
-import java.text.NumberFormat;
 
+/**
+ * @author Robert Schwartz
+ *
+ */
 public class Player {
+	/**
+	 * 
+	 */
 	private String name;
+	/**
+	 * 
+	 */
 	private int number;
+	/**
+	 * 
+	 */
 	private int onePointers;
+	/**
+	 * 
+	 */
 	private int twoPointers;
+	/**
+	 * 
+	 */
 	private int threePointers;
+	/**
+	 * 
+	 */
 	private int onePointerAttempt;
+	/**
+	 * 
+	 */
 	private int twoPointerAttempt;
+	/**
+	 * 
+	 */
 	private int threePointerAttempt;
+	/**
+	 * 
+	 */
 	private int fouls;
+	/**
+	 * 
+	 */
 	private double shotPercentage;
 	
 	
+	/**
+	 * 
+	 */
 	public Player() {
 		this.name = null;
 		this.number = 0;
@@ -26,28 +62,48 @@ public class Player {
 		this.shotPercentage = 0;
 	}
 
+	/**
+	 * @param name
+	 * @param number
+	 */
 	public Player(String name, int number) {
 		this();
 		this.name = name;
 		this.number = number;
 	}
 
+	/**
+	 * @return
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * @param name
+	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
+	/**
+	 * @return
+	 */
 	public int getNumber() {
 		return number;
 	}
 
+	/**
+	 * @param number
+	 */
 	public void setNumber(int number) {
 		this.number = number;
 	}
 	
+	/**
+	 * @param shotType
+	 * @param made
+	 */
 	public void shotAttempt(int shotType, boolean made) {
 		switch (shotType) {
 		case 1:
@@ -69,50 +125,86 @@ public class Player {
 		shotPercentage = (onePointers + twoPointers + threePointers)/(onePointerAttempt + twoPointerAttempt + threePointerAttempt);
 	} 
 
+	/**
+	 * @return
+	 */
 	public int getOnePointers() {
 		return onePointers;
 	}
 
+	/**
+	 * @return
+	 */
 	public int getTwoPointers() {
 		return twoPointers;
 	}
 
+	/**
+	 * @return
+	 */
 	public int getThreePointers() {
 		return threePointers;
 	}
 	
+	/**
+	 * @return
+	 */
 	public int getOnePointerAttempt() {
 		return onePointerAttempt;
 	}
 
+	/**
+	 * @return
+	 */
 	public int getTwoPointerAttempt() {
 		return twoPointerAttempt;
 	}
 
+	/**
+	 * @return
+	 */
 	public int getThreePointerAttempt() {
 		return threePointerAttempt;
 	}
 
+	/**
+	 * @return
+	 */
 	public int getFouls() {
 		return fouls;
 	}
 
-	public void setFouls(int fouls) {
-		this.fouls = fouls;
+	/**
+	 * @param fouls
+	 */
+	public void foul() {
+		fouls ++;
 	}
 	
+	/**
+	 * @return
+	 */
 	public double getShotPercentage() {
 		return shotPercentage;
 	}
 	
+	/**
+	 * @return
+	 */
 	public int getTotalPoints() {
 		return onePointers + (twoPointers * 2) + (threePointers * 3);
 	}
 	
+	/**
+	 * 
+	 */
 	public void display_quickStats() {
 		System.out.println("#" + number + " " + name + " Fouls=" + fouls + " Points=" + getTotalPoints());
 	}
 	
+	/**
+	 * 
+	 */
 	public void display_totalStats() {
 		
 		int percent_onePointers = (onePointerAttempt != 0) ? onePointers * 100 / onePointerAttempt : 0;

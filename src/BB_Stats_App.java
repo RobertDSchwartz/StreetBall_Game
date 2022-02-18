@@ -1,4 +1,3 @@
-import java.util.Scanner;
 
 /**
  * Basketball Stats Application
@@ -176,7 +175,7 @@ public class BB_Stats_App {
 		playerNum = Input.getIntRange("Enter Player: ", 1, 2);
 		System.out.println(singleLine);
 		
-		if (playerNum == 0)
+		if (playerNum == 1)
 			updatePlayerStats(team.getPlayer1());
 		else
 			updatePlayerStats(team.getPlayer2());
@@ -228,15 +227,15 @@ public class BB_Stats_App {
     		System.out.println(singleLine);
     		
 			if (made == 0)
-				player.shot(type, false);
+				player.shotAttempt(type, false);
 			else
-				player.shot(type, true);
+				player.shotAttempt(type, true);
 			
 			System.out.println();
 			
 		} // end of if-else
 
-		player.quickStats();
+		player.display_quickStats();
 
     }
     
@@ -255,16 +254,16 @@ public class BB_Stats_App {
      */
     private void displayGameStatus() {
     	
-    	team1.getPlayer1().fullStats();
+    	team1.getPlayer1().display_totalStats();
     	System.out.println();
     	
-    	team1.getPlayer2().fullStats();
+    	team1.getPlayer2().display_totalStats();
     	System.out.println();
     	
-    	team2.getPlayer1().fullStats();
+    	team2.getPlayer1().display_totalStats();
     	System.out.println();
     	
-    	team2.getPlayer2().fullStats();
+    	team2.getPlayer2().display_totalStats();
     	System.out.println();
     	
     } // end of playGame
