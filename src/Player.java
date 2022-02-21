@@ -5,49 +5,49 @@
  */
 public class Player {
 	/**
-	 * 
+	 * stores names of the player
 	 */
 	private String name;
 	/**
-	 * 
+	 * stores the player's jersey number
 	 */
 	private int number;
 	/**
-	 * 
+	 * number of free throws made
 	 */
 	private int onePointers;
 	/**
-	 * 
+	 * number of regular shots made
 	 */
 	private int twoPointers;
 	/**
-	 * 
+	 * number of three point shots made
 	 */
 	private int threePointers;
 	/**
-	 * 
+	 * number of free throws attempted
 	 */
 	private int onePointerAttempt;
 	/**
-	 * 
+	 * number of regular shots attempted
 	 */
 	private int twoPointerAttempt;
 	/**
-	 * 
+	 * number of three point shots attempted
 	 */
 	private int threePointerAttempt;
 	/**
-	 * 
+	 * number of fouls made
 	 */
 	private int fouls;
 	/**
-	 * 
+	 * total number of shots made / total number of shots attempted
 	 */
 	private double shotPercentage;
 	
 	
 	/**
-	 * 
+	 * creates space in storage for player data
 	 */
 	public Player() {
 		this.name = null;
@@ -63,8 +63,10 @@ public class Player {
 	}
 
 	/**
-	 * @param name
-	 * @param number
+	 * overload that takes in name and number, to set the fields
+	 * 
+	 * @param name  player's name to be stored in field
+	 * @param number player's jersey number to be stored in field
 	 */
 	public Player(String name, int number) {
 		this();
@@ -73,36 +75,36 @@ public class Player {
 	}
 
 	/**
-	 * @return
+	 * @return gives player name
 	 */
 	public String getName() {
 		return name;
 	}
 
 	/**
-	 * @param name
+	 * @param name sets name for player
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	/**
-	 * @return
+	 * @return gives jersey number
 	 */
 	public int getNumber() {
 		return number;
 	}
 
 	/**
-	 * @param number
+	 * @param number sets jersey number
 	 */
 	public void setNumber(int number) {
 		this.number = number;
 	}
 	
 	/**
-	 * @param shotType
-	 * @param made
+	 * @param shotType either 1, 2, or 3 for free throw, normal, and three point shot respectively
+	 * @param made depicts whether the shot was made or not
 	 */
 	public void shotAttempt(int shotType, boolean made) {
 		switch (shotType) {
@@ -126,84 +128,84 @@ public class Player {
 	} 
 
 	/**
-	 * @return
+	 * @return gets the number of free throws made
 	 */
 	public int getOnePointers() {
 		return onePointers;
 	}
 
 	/**
-	 * @return
+	 * @return gets the number of regular shots made
 	 */
 	public int getTwoPointers() {
 		return twoPointers;
 	}
 
 	/**
-	 * @return
+	 * @return gets the number of three point shots made
 	 */
 	public int getThreePointers() {
 		return threePointers;
 	}
 	
 	/**
-	 * @return
+	 * @return total attempts for free throws
 	 */
 	public int getOnePointerAttempt() {
 		return onePointerAttempt;
 	}
 
 	/**
-	 * @return
+	 * @return total attempts for regular shots
 	 */
 	public int getTwoPointerAttempt() {
 		return twoPointerAttempt;
 	}
 
 	/**
-	 * @return
+	 * @return total attempts for three point shots 
 	 */
 	public int getThreePointerAttempt() {
 		return threePointerAttempt;
 	}
 
 	/**
-	 * @return
+	 * @return number of fouls made by player
 	 */
 	public int getFouls() {
 		return fouls;
 	}
 
 	/**
-	 * @param fouls
+	 * @param fouls increase every time they make a foul
 	 */
 	public void foul() {
 		fouls ++;
 	}
 	
 	/**
-	 * @return
+	 * @return total shots made / total shots attempted
 	 */
 	public double getShotPercentage() {
 		return shotPercentage;
 	}
 	
 	/**
-	 * @return
+	 * @return all points made by the player
 	 */
 	public int getTotalPoints() {
 		return onePointers + (twoPointers * 2) + (threePointers * 3);
 	}
 	
 	/**
-	 * 
+	 * displays the number, name, fouls, and total points for a player
 	 */
 	public void display_quickStats() {
 		System.out.println("#" + number + " " + name + " Fouls=" + fouls + " Points=" + getTotalPoints());
 	}
 	
 	/**
-	 * 
+	 * displays all stats that the player has accumulated
 	 */
 	public void display_totalStats() {
 		
