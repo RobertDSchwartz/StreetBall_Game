@@ -211,7 +211,7 @@ public class Player {
 	/**
 	 * increase fouls by 1
 	 * 
-	 * @param fouls increase every time they make a foul
+	 * foul increase every time they make a foul
 	 */
 	public void foul() {
 		fouls ++;
