@@ -18,7 +18,7 @@ public class Team {
 	private Player player2;
 
 	/**
-	 * creates space in storage for the team
+	 * sets the team name to null and makes two empty players
 	 */
 	public Team() {
 		name = null;
@@ -37,6 +37,8 @@ public class Team {
 	}
 
 	/**
+	 * gets the team name
+	 * 
 	 * @return gets team name
 	 */
 	public String getName() {
@@ -45,6 +47,8 @@ public class Team {
 
 
 	/**
+	 * puts an actual name in the name space
+	 * 
 	 * @param name sets team name
 	 */
 	public void setName(String name) {
@@ -52,6 +56,8 @@ public class Team {
 	}
 
 	/**
+	 * gets the information of the first player in the team
+	 * 
 	 * @return gets all information for player one
 	 */
 	public Player getPlayer1() {
@@ -59,6 +65,8 @@ public class Team {
 	}
 
 	/**
+	 * sets basic information of the first player
+	 * 
 	 * @param name gives player one a name
 	 * @param number gives player one it's jersey number
 	 */
@@ -68,6 +76,8 @@ public class Team {
 	}
 
 	/**
+	 * gets the information of the second player in the team
+	 * 
 	 * @return gets all information for player two
 	 */
 	public Player getPlayer2() {
@@ -75,6 +85,8 @@ public class Team {
 	}
 
 	/**
+	 * sets basic information of the second player
+	 * 
 	 * @param name gives player two a name
 	 * @param number gives player two it's jersey number
 	 */
@@ -84,6 +96,8 @@ public class Team {
 	}
 	
 	/**
+	 * calculates the total points for the team by adding the points from each player
+	 * 
 	 * @return gets all points for the team
 	 */
 	public int getTotalPoints() {
@@ -91,6 +105,8 @@ public class Team {
 	}
 	
 	/**
+	 * calculates the total fouls for the team by adding the fouls from each player
+	 * 
 	 * @return gets total fouls for both players
 	 */
 	public int getTotalFouls() {
@@ -98,6 +114,9 @@ public class Team {
 	}
 	
 	/**
+	 * shows the menu for picking a player
+	 * shows each name and number
+	 * 
 	 * displays both the player names and numbers
 	 */
 	public void listPlayers() {
@@ -106,6 +125,8 @@ public class Team {
 	}
 	
 	/**
+	 * shows the quick stats of the team
+	 * 
 	 * displays the team name, total fouls, and total points
 	 */
 	public void displayStats() {
